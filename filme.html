@@ -1,0 +1,42 @@
+  <!DOCTYPE html>
+  <html lang="pt-br">
+  <head>
+
+    <meta charset="UTF-8">
+
+    <title>{{ title }}</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <h2>{{ title }}</h2>
+
+    <form method="post">
+
+        <label for="nome">Nome do =filme
+
+            <input type="text" name="nome" placeholder="Ex: Matilda" value="{{ filme.nome}}" required/>
+
+        </label>
+
+        <label for="genero">Genero
+
+            <input type="text" name="genero" placeholder="Ex: Romance, misterio, comedia" value="{{ filme.genero}}" required/>
+
+        </label>
+
+        <label for="classificaçao indicativa">Classificaçao indicativa
+
+            <input type="number" name="classificaçao indicativa" placeholder="Idade mínima" value="{{filme.classificaçao_indicativa}}" required/>
+
+        </label>
+
+        <button type="submit">Salvar</button>
+
+    </form>
+
+</body>
+
+</html>
