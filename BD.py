@@ -68,7 +68,7 @@ def listar_filme():
 
             'genero': row[2],
 
-            'classificação indicativa’: row[3],
+            'classificação indicativa': row[3],
 
         })
 
@@ -77,7 +77,7 @@ def listar_filme():
     return resultado
 
 
-def atualiza_filme(id, nome, classificação indicativa):
+def atualiza_filme(id, nome, genero, classificação indicativa):
 
     conn = sqlite3.connect('filmes.BD')
 
@@ -91,9 +91,7 @@ def atualiza_filme(id, nome, classificação indicativa):
 
         WHERE id=?;
 
-        """,
-
-        (nome, genero, classificação indicativa, id))
+        """, (nome, genero, classificação indicativa, id))
 
     conn.commit()
 
@@ -127,11 +125,7 @@ def detalha_filme(id):
 
     cursor.execute( """
 
-        SELECT *
-
-        FROM filmes
-
-        WHERE id=?;
+        SELECT * FROM filmes  WHERE id=?;
 
         """,(id,))
 
