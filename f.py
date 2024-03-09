@@ -1,6 +1,6 @@
 from flask import *
 
-from db import listar_filme, remove_filme, novo_filme, detalha_filme, atualiza_filme
+from BD import listar_filme, remove_filme, novo_filme, detalha_filme, atualiza_filme
 
 
 app = Flask(__name__)
@@ -40,7 +40,6 @@ def cadastrar():
     return render_template('form_filme.html', filme=None, title='Filme Novo')
 
 
-
 @app.route("/editar/<int:chave>", methods=['GET', 'POST'])
 
 def editar(chave):
@@ -60,6 +59,5 @@ def editar(chave):
 
 if __name__ == '__main__':
 
-    # Execução do servidor flask
 
     app.run()
