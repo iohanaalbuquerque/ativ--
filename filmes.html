@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+
+</head>
+
+<body>
+
+    <h2>Lista de filmes</h2>
+
+    <a href="{{ url_for('cadastrar') }}">Adicionar filme</a>
+
+    {% if not filmes %}
+
+    <p>Não há filmes cadastrados</p>
+
+    {% endif %}
+
+    <table border="1">
+
+        <thead>
+
+            <tr>
+
+                <th>Nome</th>
+
+                <th>Genero</th>
+
+                <th>Classificaçao indicativa</th>
+
+                <th>Editar</th>
+
+                <th>Remover</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+        {% for filme in filmes %}
+
+            <tr>
+
+                <td>{{ filme.nome }}</td>
+
+                <td>{{ filme.genero }}</td>
+
+                <td>{{ filme.classificaçao_indicativa }}</td>
+
+                <td><a href="{{ url_for('editar', chave=filme.id)}}">Editar</a></td>
+
+                <td><a href="{{ url_for('apagar', chave=filme.id)}}">Remover</a></td>
+
+            </tr>
+
+        {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</body>
+
+</html>
